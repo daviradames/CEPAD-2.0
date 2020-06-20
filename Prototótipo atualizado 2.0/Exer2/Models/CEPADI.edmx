@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CEPAD_IIIModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="ID_Adm" />
+          </Key>
+          <Property Name="ID_Adm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RM" Type="int" />
+          <Property Name="Cargo" Type="varchar" MaxLength="20" />
+          <Property Name="ID_Usuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="ID_Agenda" />
+          </Key>
+          <Property Name="ID_Agenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Especie" Type="int" />
+          <Property Name="ID_TA" Type="int" />
+          <Property Name="ID_Porte" Type="int" />
+          <Property Name="ID_Usuario" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CEPAD_III.dbo.Agendamento_De_Atend' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Agendamento_De_Atend">
+          <Property Name="Desc_Caso" Type="varchar" MaxLength="500" />
+          <Property Name="DT_Inicio" Type="date" />
+          <Property Name="DT_Fim" Type="date" />
+          <Property Name="ID_Animal" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="ID_Animal" />
+          </Key>
+          <Property Name="ID_Animal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DT_Nasc" Type="date" />
+          <Property Name="Nome_Animal" Type="varchar" MaxLength="200" />
+          <Property Name="Castrado" Type="char" MaxLength="1" />
+          <Property Name="Pelagem" Type="char" MaxLength="1" />
+          <Property Name="COD_RGA" Type="int" />
+          <Property Name="Micro_Chip" Type="int" />
+          <Property Name="Sexo" Type="char" MaxLength="1" />
+          <Property Name="Especificação" Type="varchar" MaxLength="200" />
+          <Property Name="ID_Tipo" Type="int" />
+          <Property Name="ID_Porte" Type="int" />
+          <Property Name="ID_Municipe" Type="int" />
+          <Property Name="ID_Especie" Type="int" />
+          <Property Name="ID_Cor" Type="int" />
+        </EntityType>
+        <EntityType Name="Cor">
+          <Key>
+            <PropertyRef Name="ID_Cor" />
+          </Key>
+          <Property Name="ID_Cor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Cor" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Disp_Atend">
+          <Key>
+            <PropertyRef Name="DT_Inicio" />
+            <PropertyRef Name="DT_Fim" />
+          </Key>
+          <Property Name="DT_Inicio" Type="date" Nullable="false" />
+          <Property Name="DT_Fim" Type="date" Nullable="false" />
+          <Property Name="NT_Atend_Ofer" Type="int" />
+          <Property Name="Num_Atend_Agendado" Type="int" />
+          <Property Name="ID_TA" Type="int" />
+          <Property Name="ID_Porte" Type="int" />
+          <Property Name="ID_Tipo" Type="int" />
+        </EntityType>
+        <EntityType Name="Especie">
+          <Key>
+            <PropertyRef Name="ID_Especie" />
+          </Key>
+          <Property Name="ID_Especie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Especie" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Item_Agendado">
+          <Key>
+            <PropertyRef Name="ID_Protocolo" />
+          </Key>
+          <Property Name="ID_Protocolo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Agenda" Type="int" />
+          <Property Name="ID_Animal" Type="int" />
+        </EntityType>
+        <EntityType Name="Municipe">
+          <Key>
+            <PropertyRef Name="ID_Municipe" />
+          </Key>
+          <Property Name="ID_Municipe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="200" />
+          <Property Name="RG" Type="int" />
+          <Property Name="DT_Nasc" Type="date" />
+          <Property Name="Tel_Fixo" Type="int" />
+          <Property Name="UF" Type="char" MaxLength="2" />
+          <Property Name="Rua" Type="varchar" MaxLength="200" />
+          <Property Name="NR_Casa" Type="int" />
+          <Property Name="Bairro" Type="varchar" MaxLength="200" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="CPF" Type="varchar" MaxLength="12" />
+          <Property Name="ID_Usuario" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="Cidade" Type="varchar" MaxLength="200" />
+          <Property Name="Complemento" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="porte">
+          <Key>
+            <PropertyRef Name="ID_Porte" />
+          </Key>
+          <Property Name="ID_Porte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Porte" Type="varchar" MaxLength="20" />
+          <Property Name="Pequeno" Type="char" MaxLength="1" />
+          <Property Name="Medio" Type="char" MaxLength="1" />
+          <Property Name="Grande" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="ID_Tipo" />
+          </Key>
+          <Property Name="ID_Tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Tipo_Animal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tipo_Atendimento">
+          <Key>
+            <PropertyRef Name="ID_TA" />
+          </Key>
+          <Property Name="ID_TA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Consulta" Type="char" MaxLength="1" />
+          <Property Name="Castração" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USuario" Type="varchar" MaxLength="100" />
+          <Property Name="Senha" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Administr__ID_Us__34C8D9D1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Espec__3C69FB99">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Porte__1DE57479">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_TA__1CF15040">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Usuar__3D5E1FD2">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'CEPAD_III.dbo.Agendamento_De_Atend' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Agendamen__ID_An__31EC6D26" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'CEPAD_III.dbo.Agendamento_De_Atend' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Agendamento_De_A__30F848ED" />-->
+        <Association Name="FK__Animal__ID_Cor__2C3393D0">
+          <End Role="Cor" Type="Self.Cor" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cor">
+              <PropertyRef Name="ID_Cor" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Cor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Espec__2B3F6F97">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Espec__3E52440B">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Munic__2A4B4B5E">
+          <End Role="Municipe" Type="Self.Municipe" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipe">
+              <PropertyRef Name="ID_Municipe" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Municipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Porte__29572725">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Tipo__286302EC">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Po__173876EA">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Po__3A81B327">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_TA__164452B1">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_TA__398D8EEE">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Ti__182C9B23">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Ti__3B75D760">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item_Agen__ID_Ag__37A5467C">
+          <End Role="Agenda" Type="Self.Agenda" Multiplicity="0..1" />
+          <End Role="Item_Agendado" Type="Self.Item_Agendado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agenda">
+              <PropertyRef Name="ID_Agenda" />
+            </Principal>
+            <Dependent Role="Item_Agendado">
+              <PropertyRef Name="ID_Agenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item_Agen__ID_An__38996AB5">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Item_Agendado" Type="Self.Item_Agendado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="ID_Animal" />
+            </Principal>
+            <Dependent Role="Item_Agendado">
+              <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipe__ID_Usu__239E4DCF">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Municipe" Type="Self.Municipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Municipe">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CEPAD_IIIModel1StoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Agenda" EntityType="Self.Agenda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cor" EntityType="Self.Cor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Disp_Atend" EntityType="Self.Disp_Atend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especie" EntityType="Self.Especie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item_Agendado" EntityType="Self.Item_Agendado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipe" EntityType="Self.Municipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="porte" EntityType="Self.porte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Atendimento" EntityType="Self.Tipo_Atendimento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Administr__ID_Us__34C8D9D1" Association="Self.FK__Administr__ID_Us__34C8D9D1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Espec__3C69FB99" Association="Self.FK__Agenda__ID_Espec__3C69FB99">
+            <End Role="Especie" EntitySet="Especie" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Porte__1DE57479" Association="Self.FK__Agenda__ID_Porte__1DE57479">
+            <End Role="porte" EntitySet="porte" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_TA__1CF15040" Association="Self.FK__Agenda__ID_TA__1CF15040">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Usuar__3D5E1FD2" Association="Self.FK__Agenda__ID_Usuar__3D5E1FD2">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Cor__2C3393D0" Association="Self.FK__Animal__ID_Cor__2C3393D0">
+            <End Role="Cor" EntitySet="Cor" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Espec__2B3F6F97" Association="Self.FK__Animal__ID_Espec__2B3F6F97">
+            <End Role="Especie" EntitySet="Especie" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Espec__3E52440B" Association="Self.FK__Animal__ID_Espec__3E52440B">
+            <End Role="Especie" EntitySet="Especie" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Munic__2A4B4B5E" Association="Self.FK__Animal__ID_Munic__2A4B4B5E">
+            <End Role="Municipe" EntitySet="Municipe" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Porte__29572725" Association="Self.FK__Animal__ID_Porte__29572725">
+            <End Role="porte" EntitySet="porte" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Tipo__286302EC" Association="Self.FK__Animal__ID_Tipo__286302EC">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Po__173876EA" Association="Self.FK__Disp_Aten__ID_Po__173876EA">
+            <End Role="porte" EntitySet="porte" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Po__3A81B327" Association="Self.FK__Disp_Aten__ID_Po__3A81B327">
+            <End Role="porte" EntitySet="porte" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_TA__164452B1" Association="Self.FK__Disp_Aten__ID_TA__164452B1">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_TA__398D8EEE" Association="Self.FK__Disp_Aten__ID_TA__398D8EEE">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Ti__182C9B23" Association="Self.FK__Disp_Aten__ID_Ti__182C9B23">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Ti__3B75D760" Association="Self.FK__Disp_Aten__ID_Ti__3B75D760">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item_Agen__ID_Ag__37A5467C" Association="Self.FK__Item_Agen__ID_Ag__37A5467C">
+            <End Role="Agenda" EntitySet="Agenda" />
+            <End Role="Item_Agendado" EntitySet="Item_Agendado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item_Agen__ID_An__38996AB5" Association="Self.FK__Item_Agen__ID_An__38996AB5">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="Item_Agendado" EntitySet="Item_Agendado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipe__ID_Usu__239E4DCF" Association="Self.FK__Municipe__ID_Usu__239E4DCF">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Municipe" EntitySet="Municipe" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CEPAD_IIIModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="ID_Adm" />
+          </Key>
+          <Property Name="ID_Adm" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RM" Type="Int32" />
+          <Property Name="Cargo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Usuario" Type="Int32" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Administr__ID_Us__34C8D9D1" FromRole="Administrador" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Agendum">
+          <Key>
+            <PropertyRef Name="ID_Agenda" />
+          </Key>
+          <Property Name="ID_Agenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Especie" Type="Int32" />
+          <Property Name="ID_TA" Type="Int32" />
+          <Property Name="ID_Porte" Type="Int32" />
+          <Property Name="ID_Usuario" Type="Int32" />
+          <NavigationProperty Name="Especie" Relationship="Self.FK__Agenda__ID_Espec__3C69FB99" FromRole="Agenda" ToRole="Especie" />
+          <NavigationProperty Name="porte" Relationship="Self.FK__Agenda__ID_Porte__1DE57479" FromRole="Agenda" ToRole="porte" />
+          <NavigationProperty Name="Tipo_Atendimento" Relationship="Self.FK__Agenda__ID_TA__1CF15040" FromRole="Agenda" ToRole="Tipo_Atendimento" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Agenda__ID_Usuar__3D5E1FD2" FromRole="Agenda" ToRole="Usuario" />
+          <NavigationProperty Name="Item_Agendado" Relationship="Self.FK__Item_Agen__ID_Ag__37A5467C" FromRole="Agenda" ToRole="Item_Agendado" />
+        </EntityType>
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="ID_Animal" />
+          </Key>
+          <Property Name="ID_Animal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DT_Nasc" Type="DateTime" Precision="0" />
+          <Property Name="Nome_Animal" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Castrado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Pelagem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_RGA" Type="Int32" />
+          <Property Name="Micro_Chip" Type="Int32" />
+          <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Especificação" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Tipo" Type="Int32" />
+          <Property Name="ID_Porte" Type="Int32" />
+          <Property Name="ID_Municipe" Type="Int32" />
+          <Property Name="ID_Especie" Type="Int32" />
+          <Property Name="ID_Cor" Type="Int32" />
+          <NavigationProperty Name="Cor" Relationship="Self.FK__Animal__ID_Cor__2C3393D0" FromRole="Animal" ToRole="Cor" />
+          <NavigationProperty Name="Especie" Relationship="Self.FK__Animal__ID_Espec__2B3F6F97" FromRole="Animal" ToRole="Especie" />
+          <NavigationProperty Name="Especie1" Relationship="Self.FK__Animal__ID_Espec__3E52440B" FromRole="Animal" ToRole="Especie" />
+          <NavigationProperty Name="Municipe" Relationship="Self.FK__Animal__ID_Munic__2A4B4B5E" FromRole="Animal" ToRole="Municipe" />
+          <NavigationProperty Name="porte" Relationship="Self.FK__Animal__ID_Porte__29572725" FromRole="Animal" ToRole="porte" />
+          <NavigationProperty Name="Tipo" Relationship="Self.FK__Animal__ID_Tipo__286302EC" FromRole="Animal" ToRole="Tipo" />
+          <NavigationProperty Name="Item_Agendado" Relationship="Self.FK__Item_Agen__ID_An__38996AB5" FromRole="Animal" ToRole="Item_Agendado" />
+        </EntityType>
+        <EntityType Name="Cor">
+          <Key>
+            <PropertyRef Name="ID_Cor" />
+          </Key>
+          <Property Name="ID_Cor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Cor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK__Animal__ID_Cor__2C3393D0" FromRole="Cor" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Disp_Atend">
+          <Key>
+            <PropertyRef Name="DT_Inicio" />
+            <PropertyRef Name="DT_Fim" />
+          </Key>
+          <Property Name="DT_Inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DT_Fim" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NT_Atend_Ofer" Type="Int32" />
+          <Property Name="Num_Atend_Agendado" Type="Int32" />
+          <Property Name="ID_TA" Type="Int32" />
+          <Property Name="ID_Porte" Type="Int32" />
+          <Property Name="ID_Tipo" Type="Int32" />
+          <NavigationProperty Name="porte" Relationship="Self.FK__Disp_Aten__ID_Po__173876EA" FromRole="Disp_Atend" ToRole="porte" />
+          <NavigationProperty Name="porte1" Relationship="Self.FK__Disp_Aten__ID_Po__3A81B327" FromRole="Disp_Atend" ToRole="porte" />
+          <NavigationProperty Name="Tipo_Atendimento" Relationship="Self.FK__Disp_Aten__ID_TA__164452B1" FromRole="Disp_Atend" ToRole="Tipo_Atendimento" />
+          <NavigationProperty Name="Tipo_Atendimento1" Relationship="Self.FK__Disp_Aten__ID_TA__398D8EEE" FromRole="Disp_Atend" ToRole="Tipo_Atendimento" />
+          <NavigationProperty Name="Tipo" Relationship="Self.FK__Disp_Aten__ID_Ti__182C9B23" FromRole="Disp_Atend" ToRole="Tipo" />
+          <NavigationProperty Name="Tipo1" Relationship="Self.FK__Disp_Aten__ID_Ti__3B75D760" FromRole="Disp_Atend" ToRole="Tipo" />
+        </EntityType>
+        <EntityType Name="Especie">
+          <Key>
+            <PropertyRef Name="ID_Especie" />
+          </Key>
+          <Property Name="ID_Especie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Especie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agenda" Relationship="Self.FK__Agenda__ID_Espec__3C69FB99" FromRole="Especie" ToRole="Agenda" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK__Animal__ID_Espec__2B3F6F97" FromRole="Especie" ToRole="Animal" />
+          <NavigationProperty Name="Animals1" Relationship="Self.FK__Animal__ID_Espec__3E52440B" FromRole="Especie" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Item_Agendado">
+          <Key>
+            <PropertyRef Name="ID_Protocolo" />
+          </Key>
+          <Property Name="ID_Protocolo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Agenda" Type="Int32" />
+          <Property Name="ID_Animal" Type="Int32" />
+          <NavigationProperty Name="Agendum" Relationship="Self.FK__Item_Agen__ID_Ag__37A5467C" FromRole="Item_Agendado" ToRole="Agenda" />
+          <NavigationProperty Name="Animal" Relationship="Self.FK__Item_Agen__ID_An__38996AB5" FromRole="Item_Agendado" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Municipe">
+          <Key>
+            <PropertyRef Name="ID_Municipe" />
+          </Key>
+          <Property Name="ID_Municipe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RG" Type="Int32" />
+          <Property Name="DT_Nasc" Type="DateTime" Precision="0" />
+          <Property Name="Tel_Fixo" Type="Int32" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Rua" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NR_Casa" Type="Int32" />
+          <Property Name="Bairro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="Int32" />
+          <Property Name="CPF" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Usuario" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Complemento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK__Animal__ID_Munic__2A4B4B5E" FromRole="Municipe" ToRole="Animal" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Municipe__ID_Usu__239E4DCF" FromRole="Municipe" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="porte">
+          <Key>
+            <PropertyRef Name="ID_Porte" />
+          </Key>
+          <Property Name="ID_Porte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Porte" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Pequeno" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Medio" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Grande" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Agenda" Relationship="Self.FK__Agenda__ID_Porte__1DE57479" FromRole="porte" ToRole="Agenda" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK__Animal__ID_Porte__29572725" FromRole="porte" ToRole="Animal" />
+          <NavigationProperty Name="Disp_Atend" Relationship="Self.FK__Disp_Aten__ID_Po__173876EA" FromRole="porte" ToRole="Disp_Atend" />
+          <NavigationProperty Name="Disp_Atend1" Relationship="Self.FK__Disp_Aten__ID_Po__3A81B327" FromRole="porte" ToRole="Disp_Atend" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="ID_Tipo" />
+          </Key>
+          <Property Name="ID_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Tipo_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Animals" Relationship="Self.FK__Animal__ID_Tipo__286302EC" FromRole="Tipo" ToRole="Animal" />
+          <NavigationProperty Name="Disp_Atend" Relationship="Self.FK__Disp_Aten__ID_Ti__182C9B23" FromRole="Tipo" ToRole="Disp_Atend" />
+          <NavigationProperty Name="Disp_Atend1" Relationship="Self.FK__Disp_Aten__ID_Ti__3B75D760" FromRole="Tipo" ToRole="Disp_Atend" />
+        </EntityType>
+        <EntityType Name="Tipo_Atendimento">
+          <Key>
+            <PropertyRef Name="ID_TA" />
+          </Key>
+          <Property Name="ID_TA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Consulta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Castração" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Agenda" Relationship="Self.FK__Agenda__ID_TA__1CF15040" FromRole="Tipo_Atendimento" ToRole="Agenda" />
+          <NavigationProperty Name="Disp_Atend" Relationship="Self.FK__Disp_Aten__ID_TA__164452B1" FromRole="Tipo_Atendimento" ToRole="Disp_Atend" />
+          <NavigationProperty Name="Disp_Atend1" Relationship="Self.FK__Disp_Aten__ID_TA__398D8EEE" FromRole="Tipo_Atendimento" ToRole="Disp_Atend" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USuario1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Administradors" Relationship="Self.FK__Administr__ID_Us__34C8D9D1" FromRole="Usuario" ToRole="Administrador" />
+          <NavigationProperty Name="Agenda" Relationship="Self.FK__Agenda__ID_Usuar__3D5E1FD2" FromRole="Usuario" ToRole="Agenda" />
+          <NavigationProperty Name="Municipes" Relationship="Self.FK__Municipe__ID_Usu__239E4DCF" FromRole="Usuario" ToRole="Municipe" />
+        </EntityType>
+        <Association Name="FK__Administr__ID_Us__34C8D9D1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Espec__3C69FB99">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agendum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Porte__1DE57479">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agendum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_TA__1CF15040">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agendum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__ID_Usuar__3D5E1FD2">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Agenda" Type="Self.Agendum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item_Agen__ID_Ag__37A5467C">
+          <End Role="Agenda" Type="Self.Agendum" Multiplicity="0..1" />
+          <End Role="Item_Agendado" Type="Self.Item_Agendado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agenda">
+              <PropertyRef Name="ID_Agenda" />
+            </Principal>
+            <Dependent Role="Item_Agendado">
+              <PropertyRef Name="ID_Agenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Cor__2C3393D0">
+          <End Role="Cor" Type="Self.Cor" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cor">
+              <PropertyRef Name="ID_Cor" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Cor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Espec__2B3F6F97">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Espec__3E52440B">
+          <End Role="Especie" Type="Self.Especie" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especie">
+              <PropertyRef Name="ID_Especie" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Munic__2A4B4B5E">
+          <End Role="Municipe" Type="Self.Municipe" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipe">
+              <PropertyRef Name="ID_Municipe" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Municipe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Porte__29572725">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Animal__ID_Tipo__286302EC">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Item_Agen__ID_An__38996AB5">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Item_Agendado" Type="Self.Item_Agendado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="ID_Animal" />
+            </Principal>
+            <Dependent Role="Item_Agendado">
+              <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Po__173876EA">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Po__3A81B327">
+          <End Role="porte" Type="Self.porte" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="porte">
+              <PropertyRef Name="ID_Porte" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Porte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_TA__164452B1">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_TA__398D8EEE">
+          <End Role="Tipo_Atendimento" Type="Self.Tipo_Atendimento" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Atendimento">
+              <PropertyRef Name="ID_TA" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_TA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Ti__182C9B23">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disp_Aten__ID_Ti__3B75D760">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+          <End Role="Disp_Atend" Type="Self.Disp_Atend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="ID_Tipo" />
+            </Principal>
+            <Dependent Role="Disp_Atend">
+              <PropertyRef Name="ID_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipe__ID_Usu__239E4DCF">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Municipe" Type="Self.Municipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Municipe">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CEPAD_IIIEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administradors" EntityType="Self.Administrador" />
+          <EntitySet Name="Agenda" EntityType="Self.Agendum" />
+          <EntitySet Name="Animals" EntityType="Self.Animal" />
+          <EntitySet Name="Cors" EntityType="Self.Cor" />
+          <EntitySet Name="Disp_Atend" EntityType="Self.Disp_Atend" />
+          <EntitySet Name="Especies" EntityType="Self.Especie" />
+          <EntitySet Name="Item_Agendado" EntityType="Self.Item_Agendado" />
+          <EntitySet Name="Municipes" EntityType="Self.Municipe" />
+          <EntitySet Name="portes" EntityType="Self.porte" />
+          <EntitySet Name="Tipoes" EntityType="Self.Tipo" />
+          <EntitySet Name="Tipo_Atendimento" EntityType="Self.Tipo_Atendimento" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Administr__ID_Us__34C8D9D1" Association="Self.FK__Administr__ID_Us__34C8D9D1">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Administrador" EntitySet="Administradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Espec__3C69FB99" Association="Self.FK__Agenda__ID_Espec__3C69FB99">
+            <End Role="Especie" EntitySet="Especies" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Porte__1DE57479" Association="Self.FK__Agenda__ID_Porte__1DE57479">
+            <End Role="porte" EntitySet="portes" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_TA__1CF15040" Association="Self.FK__Agenda__ID_TA__1CF15040">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__ID_Usuar__3D5E1FD2" Association="Self.FK__Agenda__ID_Usuar__3D5E1FD2">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item_Agen__ID_Ag__37A5467C" Association="Self.FK__Item_Agen__ID_Ag__37A5467C">
+            <End Role="Agenda" EntitySet="Agenda" />
+            <End Role="Item_Agendado" EntitySet="Item_Agendado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Cor__2C3393D0" Association="Self.FK__Animal__ID_Cor__2C3393D0">
+            <End Role="Cor" EntitySet="Cors" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Espec__2B3F6F97" Association="Self.FK__Animal__ID_Espec__2B3F6F97">
+            <End Role="Especie" EntitySet="Especies" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Espec__3E52440B" Association="Self.FK__Animal__ID_Espec__3E52440B">
+            <End Role="Especie" EntitySet="Especies" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Munic__2A4B4B5E" Association="Self.FK__Animal__ID_Munic__2A4B4B5E">
+            <End Role="Municipe" EntitySet="Municipes" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Porte__29572725" Association="Self.FK__Animal__ID_Porte__29572725">
+            <End Role="porte" EntitySet="portes" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Animal__ID_Tipo__286302EC" Association="Self.FK__Animal__ID_Tipo__286302EC">
+            <End Role="Tipo" EntitySet="Tipoes" />
+            <End Role="Animal" EntitySet="Animals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Item_Agen__ID_An__38996AB5" Association="Self.FK__Item_Agen__ID_An__38996AB5">
+            <End Role="Animal" EntitySet="Animals" />
+            <End Role="Item_Agendado" EntitySet="Item_Agendado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Po__173876EA" Association="Self.FK__Disp_Aten__ID_Po__173876EA">
+            <End Role="porte" EntitySet="portes" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Po__3A81B327" Association="Self.FK__Disp_Aten__ID_Po__3A81B327">
+            <End Role="porte" EntitySet="portes" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_TA__164452B1" Association="Self.FK__Disp_Aten__ID_TA__164452B1">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_TA__398D8EEE" Association="Self.FK__Disp_Aten__ID_TA__398D8EEE">
+            <End Role="Tipo_Atendimento" EntitySet="Tipo_Atendimento" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Ti__182C9B23" Association="Self.FK__Disp_Aten__ID_Ti__182C9B23">
+            <End Role="Tipo" EntitySet="Tipoes" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disp_Aten__ID_Ti__3B75D760" Association="Self.FK__Disp_Aten__ID_Ti__3B75D760">
+            <End Role="Tipo" EntitySet="Tipoes" />
+            <End Role="Disp_Atend" EntitySet="Disp_Atend" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipe__ID_Usu__239E4DCF" Association="Self.FK__Municipe__ID_Usu__239E4DCF">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Municipe" EntitySet="Municipes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CEPAD_IIIModel1StoreContainer" CdmEntityContainer="CEPAD_IIIEntities1">
+          <EntitySetMapping Name="Administradors">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="ID_Adm" ColumnName="ID_Adm" />
+                <ScalarProperty Name="RM" ColumnName="RM" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agenda">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Agendum">
+              <MappingFragment StoreEntitySet="Agenda">
+                <ScalarProperty Name="ID_Agenda" ColumnName="ID_Agenda" />
+                <ScalarProperty Name="ID_Especie" ColumnName="ID_Especie" />
+                <ScalarProperty Name="ID_TA" ColumnName="ID_TA" />
+                <ScalarProperty Name="ID_Porte" ColumnName="ID_Porte" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Animals">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Animal">
+              <MappingFragment StoreEntitySet="Animal">
+                <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+                <ScalarProperty Name="DT_Nasc" ColumnName="DT_Nasc" />
+                <ScalarProperty Name="Nome_Animal" ColumnName="Nome_Animal" />
+                <ScalarProperty Name="Castrado" ColumnName="Castrado" />
+                <ScalarProperty Name="Pelagem" ColumnName="Pelagem" />
+                <ScalarProperty Name="COD_RGA" ColumnName="COD_RGA" />
+                <ScalarProperty Name="Micro_Chip" ColumnName="Micro_Chip" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Especificação" ColumnName="Especificação" />
+                <ScalarProperty Name="ID_Tipo" ColumnName="ID_Tipo" />
+                <ScalarProperty Name="ID_Porte" ColumnName="ID_Porte" />
+                <ScalarProperty Name="ID_Municipe" ColumnName="ID_Municipe" />
+                <ScalarProperty Name="ID_Especie" ColumnName="ID_Especie" />
+                <ScalarProperty Name="ID_Cor" ColumnName="ID_Cor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cors">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Cor">
+              <MappingFragment StoreEntitySet="Cor">
+                <ScalarProperty Name="ID_Cor" ColumnName="ID_Cor" />
+                <ScalarProperty Name="Nome_Cor" ColumnName="Nome_Cor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disp_Atend">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Disp_Atend">
+              <MappingFragment StoreEntitySet="Disp_Atend">
+                <ScalarProperty Name="DT_Inicio" ColumnName="DT_Inicio" />
+                <ScalarProperty Name="DT_Fim" ColumnName="DT_Fim" />
+                <ScalarProperty Name="NT_Atend_Ofer" ColumnName="NT_Atend_Ofer" />
+                <ScalarProperty Name="Num_Atend_Agendado" ColumnName="Num_Atend_Agendado" />
+                <ScalarProperty Name="ID_TA" ColumnName="ID_TA" />
+                <ScalarProperty Name="ID_Porte" ColumnName="ID_Porte" />
+                <ScalarProperty Name="ID_Tipo" ColumnName="ID_Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especies">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Especie">
+              <MappingFragment StoreEntitySet="Especie">
+                <ScalarProperty Name="ID_Especie" ColumnName="ID_Especie" />
+                <ScalarProperty Name="Nome_Especie" ColumnName="Nome_Especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item_Agendado">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Item_Agendado">
+              <MappingFragment StoreEntitySet="Item_Agendado">
+                <ScalarProperty Name="ID_Protocolo" ColumnName="ID_Protocolo" />
+                <ScalarProperty Name="ID_Agenda" ColumnName="ID_Agenda" />
+                <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipes">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Municipe">
+              <MappingFragment StoreEntitySet="Municipe">
+                <ScalarProperty Name="ID_Municipe" ColumnName="ID_Municipe" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DT_Nasc" ColumnName="DT_Nasc" />
+                <ScalarProperty Name="Tel_Fixo" ColumnName="Tel_Fixo" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Rua" ColumnName="Rua" />
+                <ScalarProperty Name="NR_Casa" ColumnName="NR_Casa" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="portes">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.porte">
+              <MappingFragment StoreEntitySet="porte">
+                <ScalarProperty Name="ID_Porte" ColumnName="ID_Porte" />
+                <ScalarProperty Name="Nome_Porte" ColumnName="Nome_Porte" />
+                <ScalarProperty Name="Pequeno" ColumnName="Pequeno" />
+                <ScalarProperty Name="Medio" ColumnName="Medio" />
+                <ScalarProperty Name="Grande" ColumnName="Grande" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipoes">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Tipo">
+              <MappingFragment StoreEntitySet="Tipo">
+                <ScalarProperty Name="ID_Tipo" ColumnName="ID_Tipo" />
+                <ScalarProperty Name="Nome_Tipo_Animal" ColumnName="Nome_Tipo_Animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Atendimento">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Tipo_Atendimento">
+              <MappingFragment StoreEntitySet="Tipo_Atendimento">
+                <ScalarProperty Name="ID_TA" ColumnName="ID_TA" />
+                <ScalarProperty Name="Consulta" ColumnName="Consulta" />
+                <ScalarProperty Name="Castração" ColumnName="Castração" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="CEPAD_IIIModel1.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="USuario1" ColumnName="USuario" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

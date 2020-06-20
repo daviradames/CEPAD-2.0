@@ -1,0 +1,48 @@
+﻿.header .logo {
+    margin: 25px 0 20px;
+}
+
+.header .logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 25px 0 0;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.main-navigation {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 10;
+}
+
+    .main-navigation ul {
+        margin: 0;
+        text-align: right;
+        list-style: none;
+    }
+
+    .main-navigation .big-menu-on-hover {
+        margin: 0 19px 0 0;
+    }
+
+    .main-navigation ul li {
+        display: inline-block;
+    }
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    height: 50px;
+    box-sizing: border-box;
+}

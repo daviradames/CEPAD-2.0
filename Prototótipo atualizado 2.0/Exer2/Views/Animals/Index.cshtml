@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Exer2.Models.Animal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DT_Nasc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_Animal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Castrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pelagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_RGA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Micro_Chip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especificação)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cor.Nome_Cor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especie.Nome_Especie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especie1.Nome_Especie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipe.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo.Nome_Tipo_Animal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DT_Nasc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_Animal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Castrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pelagem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COD_RGA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Micro_Chip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especificação)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cor.Nome_Cor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especie.Nome_Especie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especie1.Nome_Especie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipe.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porte.Nome_Porte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo.Nome_Tipo_Animal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Animal }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Animal }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Animal })
+        </td>
+    </tr>
+}
+
+</table>

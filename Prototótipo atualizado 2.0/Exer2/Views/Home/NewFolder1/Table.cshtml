@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Agenda</h2>
+<div id="formulario">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Vagas</th>
+                <th scope="col">Tipo de animal</th>
+                <th scope="col">Porte</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Horário inicial</th>
+                <th scope="col">Horário final</th>
+                <th scope="col">Tipo de atendimento</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>10</td>
+                <td>Gato</td>
+                <td>P</td>
+                <td>M</td>
+                <td>13:00</td>
+                <td>14:00</td>
+                <td>Clínico</td>
+                <td>31/01/2019</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>5</td>
+                <td>Cachorro</td>
+                <td>P</td>
+                <td>M</td>
+                <td>14:00</td>
+                <td>15:00</td>
+                <td>Clínico</td>
+                <td>31/01/2019</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>10</td>
+                <td>Pássaro</td>
+                <td>P</td>
+                <td>F</td>
+                <td>15:00</td>
+                <td>16:00</td>
+                <td>Clínico</td>
+                <td>31/01/2019</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <p>
+
+        <input type="button" id="but_voltar" value="disponibilizar agenda" />
+        <a href="http://localhost:65085/Home/Index">
+            <input c type="button" id="but_voltar" value="Alterar agenda" />
+        </a>
+
+        <a href="http://localhost:65085/Home/Nvtable">
+            <input type="button" id="but_voltar" value="nova agenda" />
+        </a>
+
+    </p>
+    <br />
+
+</div>
+
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("teste2", "teste2", "Home", new { })
+</div>

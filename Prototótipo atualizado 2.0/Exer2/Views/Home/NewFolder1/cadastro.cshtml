@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script>
+    function Onlychars(e) {
+        var tecla = new Number();
+        if (window.event) {
+            tecla = e.keyCode;
+        }
+        else if (e.which) {
+            tecla = e.which;
+        }
+        else {
+            return true;
+        }
+        if ((tecla >= "48") && (tecla <= "57")) {
+            return false;
+        }
+    }
+</script>
+
+<center>
+    <img src="~/IMG/barraVertica.png" style="position: absolute; left: 800px; top: 200px" />
+</center>
+
+<div id="cadastro">
+    <h1 id="cads">Cadastro</h1>
+
+    <br />
+    <form method="get" onSubmit="return validar()">
+        <div>
+            <label for="inputEstado" id="campo_uf_crmv"> UF do CRMV: <input type="text" id="CRMV" size="8" maxlength="2" onkeypress="return Onlychars(event)" required></label>
+        </div>
+        <br />
+        <b>
+            <div id="campo_crmv">
+                CRMV:                <input type="text" id="CRMV" required />
+            </div>
+
+            <br />
+
+            <div id="nome_campo">
+                Nome:                   <input type="text" id="CRMV" required />
+            </div>
+
+            <br />
+
+            <div id="email_campo">
+                Email:                  <input type="email" id="CRMV" required />
+            </div>
+
+            <br />
+
+            <div id="sex">
+                Sexo:                Masculino       <input type="radio" name="sexo" checked="checked">
+            </div>
+            <div id="feminino">        Feminino        <input type="radio" name="sexo"></div>
+
+
+            <br />
+
+            <div>
+                <label>Data Nacimento:     <input type="date" placeholder="mm/dd/aaaa" id="data_nascimento" required></label>
+            </div>
+
+            <br />
+
+            <div id="tel">
+                Telefone:                  <input type="number" id="tell" required placeholder="(XX)" /> - <input type="number" id="tell2" required placeholder="XXXX-XXXX" />
+            </div>
+
+            <br />
+
+            <div id="campo_senha">
+                Senha:                  <input type="password" id="senha" required />
+            </div>
+
+            <br />
+
+            <div id="campo_confirm_senha">
+                Confirmar senha:        <input type="password" id="CRMV" required />
+            </div>
+
+            <br />
+
+        </b>
+
+    </form>
+
+</div>
+
+<div id="formulario">
+    <input type="reset" id="but_voltar" value="limpar os dados" />
+    <input type="submit" id="but_prox" value="confirma o cadastro" />
+</div>
+
+
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("Agendados", "Agendados", "Home", new { })
+</div>

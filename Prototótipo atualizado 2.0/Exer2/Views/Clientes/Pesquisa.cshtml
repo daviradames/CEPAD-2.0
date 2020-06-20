@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Pesquisa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Mvc_Pesquisa.ViewModels.ClienteVM
+@{
+    ViewBag.Title = "Cliente";
+    WebGrid grid = new WebGrid(canPage: false, canSort: false);
+    grid.Bind(Model.Clientes,
+              autoSortAndPage: false
+    );
+}
+
+@using (Html.BeginForm())
+{
+
+
+<div>
+    <p id="formTi" class="TextoC">Informações do Munícipe</p>
+    <p class="text-center" id="tituloResumo">informações gerais sobre todos os munícipes</p>
+    <form>
+        <div class="row mb-4">
+            <div id="pesquisa_bar">
+                <div class="form-group col-md-9">
+                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control form-control-underlined", id = "exampleFormControlInput5", placeholder = "Pesquise pelo CPF" })
+                </div>
+                <div class="form-group col-md-3">
+                    <button type="submit" class="btn btn-primary rounded-pill btn-block shadow-sm">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+    <div class="barra">
+        <div class="row-fluid">
+            <div class="span2">
+            </div>
+
+
+            <div id="gridContent">
+                @grid.GetHtml(tableStyle: "webgrid-table",
+                              headerStyle: "webgrid-header",
+                                    footerStyle: "webgrid-footer",
+                                    alternatingRowStyle: "webgrid-alternating-row",
+                                    selectedRowStyle: "webgrid-selected-row",
+                                    rowStyle: "webgrid-row-style",
+                                    mode: WebGridPagerModes.All,
+
+                        columns:
+                         grid.Columns(
+
+                            grid.Column(columnName: "Nome", header: "Nome", format: @<text>@item.NOME</text>),
+
+                            grid.Column(columnName: "Cidade", header: "Cidade", format: @<text>@item.Cidade</text>),
+
+                            grid.Column(columnName: "CPF", header: "CPF", format: @<text>@item.CPF</text>),
+
+                            grid.Column(columnName: "Rua", header: "Rua", format: @<text>@item.Rua</text>),
+
+                            grid.Column(columnName: "RG", header: "RG", format: @<text>@item.RG</text>),
+
+                            grid.Column(columnName: "UF", header: "UF", format: @<text>@item.UF</text>),
+
+                            grid.Column(columnName: "Email", header: "Email", format: @<text>@item.Email</text>)
+           ))
+
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+
