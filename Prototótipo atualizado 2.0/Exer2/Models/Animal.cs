@@ -22,9 +22,14 @@ namespace Exer2.Models
         }
     
         public int ID_Animal { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DT_Nasc { get; set; }
+        [Required]
         [StringLength(100)]
         public string Nome_Animal { get; set; }
+        [Required]
         [StringLength(1, ErrorMessage = "Apenas a primeira letra.")]
         public string Castrado { get; set; }
         [StringLength(1, ErrorMessage = "Apenas a primeira letra.")]

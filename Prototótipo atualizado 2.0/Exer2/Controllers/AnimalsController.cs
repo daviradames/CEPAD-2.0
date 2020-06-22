@@ -46,13 +46,17 @@ namespace Exer2.Controllers
         public ActionResult Create()
 
         {
-            ViewBag.ID_Cor = new SelectList(db.Cors, "ID_Cor", "Nome_Cor");
-            ViewBag.ID_Especie = new SelectList(db.Especies, "ID_Especie", "Nome_Especie");
-            ViewBag.ID_Especie = new SelectList(db.Especies, "ID_Especie", "Nome_Especie");
-            ViewBag.ID_Municipe = new SelectList(db.Municipes, "ID_Municipe", "Nome");
-            ViewBag.ID_Porte = new SelectList(db.portes, "ID_Porte", "Nome_Porte");
-            ViewBag.ID_Tipo = new SelectList(db.Tipoes, "ID_Tipo", "Nome_Tipo_Animal");
-            return View();
+            if (Session["usuarioLogadoID"] != null)
+            {
+                ViewBag.ID_Cor = new SelectList(db.Cors, "ID_Cor", "Nome_Cor");
+                ViewBag.ID_Especie = new SelectList(db.Especies, "ID_Especie", "Nome_Especie");
+                ViewBag.ID_Especie = new SelectList(db.Especies, "ID_Especie", "Nome_Especie");
+                ViewBag.ID_Municipe = new SelectList(db.Municipes, "ID_Municipe", "Nome");
+                ViewBag.ID_Porte = new SelectList(db.portes, "ID_Porte", "Nome_Porte");
+                ViewBag.ID_Tipo = new SelectList(db.Tipoes, "ID_Tipo", "Nome_Tipo_Animal");
+                return View();
+            }
+            else { return RedirectToAction("Login", "Home"); }
         }
 
         // POST: Animals/Create

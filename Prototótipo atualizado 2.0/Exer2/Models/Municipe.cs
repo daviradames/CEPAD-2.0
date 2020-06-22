@@ -22,27 +22,34 @@ namespace Exer2.Models
         }
     
         public int ID_Municipe { get; set; }
-       
+        [Required]
         public string Nome { get; set; }
-        
+        [Required]
+       
         public Nullable<int> RG { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DT_Nasc { get; set; }
         public Nullable<int> Tel_Fixo { get; set; }
-        
+        [Required]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "Deve conter no máximo e no mínimo (2).")]
         public string UF { get; set; }
        
         public string Rua { get; set; }
         public Nullable<int> NR_Casa { get; set; }
-      
+        [Required]
         public string Bairro { get; set; }
         public Nullable<int> Celular { get; set; }
-
+        [Required]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "Deve conter no máximo e no mínimo (11).")]
         public string CPF { get; set; }
+        
         public Nullable<int> ID_Usuario { get; set; }
-        [DataType(DataType.EmailAddress)]
+        [Required]
+        [DataType(DataType.EmailAddress)]       
         public string Email { get; set; }
+        [Required]
         public string Cidade { get; set; }
        
         public string Complemento { get; set; }
