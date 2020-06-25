@@ -1,0 +1,35 @@
+﻿@model Exer2.Models.Tipo_Atendimento
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tipo_Atendimento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Consulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Castração)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Castração)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_TA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

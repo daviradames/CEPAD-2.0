@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "IndexPentaTec";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form>
+    <h1 id="titulo">Consulta Agenda disponível</h1>
+
+    <div id="possuiCadas">
+        <label for="nome">já possuo cadastro:</label>
+        <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        <input type="button" name="botao-ok" value="Ok" id="OKCadastro">
+    </div><br />
+
+
+    <div id="possuiProt">
+        <label for="nome">já possuo protocolo:</label>
+        <input tyepe="text" name="nome" id=" nome" />
+        <input type="button" name="botao-ok" value="Ok" id="OkProtocolo">
+    </div><br />
+
+
+
+    <div id="geralIni">
+        <div id="AnimalIni">
+            <br />
+            <label> Espécie:</label>
+            <SELECT>
+                <OPTION SELECTED>
+                <OPTION>Canino
+                <OPTION>Equino
+                <OPTION>Felino
+            </SELECT>
+        </div><br />
+
+        <div id="RaçaIni">
+            <label>Raça:</label>
+            <SELECT>
+                <OPTION SELECTED>
+                <OPTION>blabla
+                <OPTION>xuxu
+                <OPTION>abacate
+            </SELECT>
+        </div><br />
+
+        <div id="PorteIni">
+            <label>Porte:</label>
+            Pequeno
+            <input type="radio" name="porte" value="Pequeno" checked>
+        </div>
+        <div id="PorteMedIni">
+            Médio
+            <input type="radio" name="porte" value="Médio">
+        </div>
+        <div id="PorteGradIni">
+            Grande
+            <input type="radio" name="porte" value="Grande">
+        </div><br />
+
+        <div id="SexoIni">
+            <label> Sexo:</label>
+            Macho
+            <input type="radio" name="sex" value="Macho" checked>
+        </div>
+        <div id="SexoFemIni">
+            Fêmea
+            <input type="radio" name="sex" value="femea">
+        </div><br />
+
+        <div id="TipoConsultaIni">
+            <label>Tipo Atendimento:</label>
+            Consulta Clínica
+            <INPUT TYPE="radio" name="test" value="Clinica" checked>
+        </div>
+        <div id="TipoCasIni">
+            Castração
+            <INPUT TYPE="radio" name="test" value="castracao">
+        </div><br />
+
+
+        <div id="veracidadeIni">
+            <INPUT TYPE="checkbox" name="teste3" value="3">
+            Declaro que as informações prestada são verdadeiras, e assumo a inteira responsablidade pelas mesmas.
+            <br /><br />
+        </div>
+    </div><br />
+
+
+    <div>
+        <input type="button" name="botao-ok" value="Confirmar" id="botaoIni">
+    </div>
+
+</form>
+
+<div style="background-color:#ff0000;height:40px;width:100px;" >
+@Html.ActionLink("cadastro", "cadastro", "Home", new {}) </div>

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Protocolo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2 class="tituloProto">PROTOCOLO</h2>
+
+
+<div class="ProtolocoVinda1">
+    <br />
+    <div id="NProt"><label>Número do protocolo:</label></div><br />
+    <div id="DesProt"><label>Descrição:</label></div><br />
+    <div id="NoResProt"><label>Nome do responsável:</label></div><br />
+    <div id="ConsProt"><label>Consulta:</label></div><br />
+    <div id="AniProt"><label>Animal:</label></div><br />
+    <div id="PortProt"><label>Porte: </label></div><br />
+    <div id="RacaProt"><label>Raça:</label></div><br />
+    <div id="SexoProt"><label>Sexo: </label></div><br />
+    <div id="DescDesProt"><label>Descrição:</label></div>
+</div>
+
+<br />
+<div class="ProtolocoVinda2">
+    <br />
+    <div id="DiaProt"><label>Dia:</label></div>
+    <div id="horaProt"><label>Horário:</label></div>
+    <div id="localProt"><label>Local:</label> Cepad 1 - End: R. Vera Cruz, 340 - Jardim dos Altos, Barueri - SP, 06401-129</div>
+</div>
+<br />
+<div class="ProtolocoVinda3">
+    <h6 id="tituloProtoco">Apresentar os seguintes documentos:</h6>
+    <ul>
+        <li> RG com cópia;</li>
+        <li> Cópia do CPF;</li>
+        <li> Cópia do comprovante de residencia atualizado;</li>
+    </ul>
+</div>
+<br />
+
+<button onclick="print()" id="btnImp">IMPRIMIR PROTOCOLO</button>
+<br />
+<br />
+
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("Resumo", "Resumo", "Home", new { })
+</div>

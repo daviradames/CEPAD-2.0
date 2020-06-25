@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "haha";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    
+</head>
+
+<body>
+
+    
+    <form action="Script_do_Formulario.php" method="post">
+
+        <!-- DADOS DO ANIMAL-->
+        <fieldset>
+            <div id="paraDireita">
+                <div id="ani">
+                    <div class="form-check">
+                        <label>Castrado:</label><br>
+
+
+                        <input type="radio" class="form-check-input" name="cast" value="s" checked> SIM<br>
+                        <input type="radio" class="form-check-input" name="cast" value="n"> NÃO<br>
+                    </div>
+
+
+                    <br />
+                    <div class="form-group" id="aniRaça">
+                        <div>
+                            <label>Raça:</label>
+                        </div>
+                        <select name="raça" class="form-control" id="exampleFormControlSelect1">
+                            <option value="null" selected>Escolher</option>
+                            <option value="ss">shitzu</option>
+                            <option value="al">Vira-Lata</option>
+                            <option value="am">Pastor Alemão</option>
+                            <option value="am">Chihuahua</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="aniRaça">
+                        <div class="form-group">
+                            <div>
+                                <label>Cor predominante do animal:</label>
+                            </div>
+                            <select name="raça" class="form-control" id="exampleFormControlSelect1">
+                                <option value="null" selected>Escolher</option>
+                                <option value="ss">Marrom</option>
+                                <option value="al">Preto</option>
+                                <option value="am">Branco</option>
+                                <option value="am">Preto e Branco</option>
+                                <option value="am">Marrom e Branco</option>
+
+
+                            </select>
+                        </div>
+
+
+
+                        <div>
+                            <div>
+                                <label>Porte do Animal:</label>
+                            </div>
+
+                            <input type="radio" name="port" value="pequeno" checked> PEQUENO<br>
+                            <input type="radio" name="port" value="medio"> MÉDIO<br>
+                            <input type="radio" name="port" value="grande"> GRANDE<br>
+
+                        </div>
+                        <br />
+                        <div>
+                            <div>
+                                <label>Especificação:</label>
+                            </div>
+                            <textarea rows="4" cols="50"></textarea>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div id="aniNome">
+                    <div id="aniNome2">
+                        <p id="formTi">Dados do Animal</p>
+
+                        <div class="form-group" id="aniNome3">
+                            <div class="col">
+                                <label> Nome do Animal:</label>
+
+                            </div>
+
+                            <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group" id="aniIdade">
+                            <div class="col">
+                                <label for="idade">Idade:</label><br>
+                            </div>
+
+                            <input type="radio" class="form-check-input" name="idade" value="adulto" checked> ADULTO<br>
+                            <input type="radio" class="form-check-input" name="idade" value="filhote"> FILHOTE<br>
+                        </div>
+                        <div class="form-group">
+                            <label>Nascimento Aproximado:</label>
+                            <div id="aniNasc">
+                                <input type="text" class="form-control" name="data" OnKeyUp="mascaraData(this);" maxlength="7" placeholder="xx/xxxx" />
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group" id="aniRga">
+                            <div class="col">
+                                <label for="rga">RGA: </label>
+                            </div>
+
+                            <input class="form-control" type="text" name="rga" maxlength="13">
+                        </div>
+
+
+                        <div class="form-check">
+                            <div>
+                                <label>Sexo:</label><br>
+
+
+                                <input type="radio" class="form-check-input" name="genero" value="m" checked> MACHO<br>
+                                <input type="radio" class="form-check-input" name="genero" value="f"> FÊMEA<br>
+
+                            </div>
+
+                            <div class="form-check">
+                                <br />
+                                <div>
+                                    <label>Pelagem:</label><br>
+
+
+                                    <input type="radio" class="form-check-input" name="pelo" value="C" checked> CURTA<br>
+                                    <input type="radio" class="form-check-input" name="pelo" value="L"> LONGA<br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <br />
+
+
+
+
+        </fieldset>
+        <div id="formulario">
+            <input type="submit" class="btn btn-info" id="but_voltar" value="Enviar">
+            <input type="reset" class="btn btn-info" id="but_prox" value="Limpar">
+            <button  class="btn btn-info" id="but_voltar">@Html.ActionLink("Voltar para seleção de espécie", "Index", "Home")</button>
+        
+
+        </div>
+        <br />
+
+</body>
+</html>
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("Index", "Index", "Home", new { })
+</div>
+
+

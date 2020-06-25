@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "cadastroADM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+
+<body id="bodyADM">
+    <div id="cadastro1">
+        <h1>cadastro</h1>
+
+        <form>
+            <p>Usuário</p>
+            <input type="text" name="" placeholder="Insira seu nome de usuário" />
+            <p>Senha</p>
+            <input type="password" name="" placeholder="Insira sua senha" />
+            <input type="submit" name="" value="criar" />
+            <div class="link">
+               possui uma conta? @Html.ActionLink("Logue", "LoginADM", "Admin")
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Nvtable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+</head>
+<body>
+
+    <h2>Agenda</h2>
+    <div id="formulario">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Vagas</th>
+                    <th scope="col">Tipo de animal</th>
+                    <th scope="col">Porte</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Horário inicial</th>
+                    <th scope="col">Horário final</th>
+                    <th scope="col">Tipo de atendimento</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+        </table>
+
+        <div id="botoes">
+
+            <input type="button" id="but_voltar" value="disponibilizar agenda" />
+            <a href="http://localhost:65085/Home/Index">
+                <input type="button" id="but_voltar" value="Alterar agenda" />
+            </a>
+            <input type="button" id="but_voltar" value="nova agenda" />
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+
+    </div>
+</body>
+</html>
+
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("Protocolo", "Protocolo", "Home", new { })
+</div>

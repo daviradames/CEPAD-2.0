@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body id="body" style="background-color: rgba(0, 0, 0, 0.49);">
+
+
+    <div id="loginz">
+
+        <meta charset="UTF-8" />
+        
+
+        <div class="container">
+
+
+            <div class="content">
+                <!--FORMULÁRIO DE LOGIN-->
+                <div id="login">
+                    <form method="post" action="">
+                        <h1>Login</h1>
+                        <div>
+                            <div for="nome_login">Usuário / Email: </div>
+                            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. Décio" />
+                        </div>
+
+                        <div>
+                            <div for="email_login">Senha:</div>
+                            <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" />
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                            <div for="manterlogado">Manter-me logado</div>
+                        </div>
+
+
+                        <div>
+                            <a href="http://localhost:65085/Home/Index">
+                                <input type="button" value="Logar" />
+                            </a>
+                        </div>
+
+                        <div class="link">
+                            Ainda não tem conta?
+                            <a href="">Cadastre-se</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("Nvtable", "Nvtable", "Home", new { })
+</div>

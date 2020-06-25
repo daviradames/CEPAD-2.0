@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Agendados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form>
+        <h1 class="agenda">ANIMAIS AGENDADOS</h1>
+        <div class="geral">
+            <h2 id="prot"><label>Nº Protocolo:</label></h2>
+            <h2 id="dia"><label>Dia:</label></h2>
+            <h2 id="hora"><label>Hora:</label></h2>
+            <h2 id="local"><label>Local:CEPAD I-R.Vera Cruz,340-Jardim dos Altos,</label></h2>
+            <h2 id="barueri"><label>Barueri-SP,</label></h2>
+            <h2 id="CEP"><label>06401-129</label></h2>
+        </div>
+        <br />
+        <br />
+
+        <div class="botao">
+            <input id="editaAgend" type="button" value="EDITAR">
+            <input id="cancelaAgend" type="button" value="CANCELAR">
+            <input id="confirmaAgend" type="submit" value="CONFIRMAR">
+            <input id="voltaAgend" type="button" value="VOLTAR">
+        </div><br /><br /><br />
+    </form>
+
+    
+    <div style="background-color:#ff0000;height:40px;width:100px;">
+        @Html.ActionLink("Dados", "Dados", "Home", new { })
+    </div>

@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "Dados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form>
+    <h2 class="Titulo">Dados  Pessoais</h2>
+
+
+    <div class="DadosPessoais">
+        <br />
+        <div id="NomeDados">
+            <label for="nome">Nome:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:300px">
+        </div>
+        <br />
+        <div id="EmailDados">
+            <label for="nome">Email:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:300px;">
+        </div>
+        <br />
+        <div id="IdadeDados">
+            <label for="nome">Nascimemto:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:150px;">
+        </div>
+        <br />
+        <div id="TelDados">
+            <label for="nome">Tel:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:150px;">
+        </div>
+        <br />
+        <div id="RGDados">
+            <label for="nome">RG:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:150px;">
+        </div>
+        <br />
+        <div id="CPFDados">
+            <label for="nome">CPF:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:150px;">
+        </div>
+        <br />
+    </div>
+    <h2 class="Titulo">Endereço</h2>
+
+    <div class=DadosEndereço>
+        <br />
+        <div id="CEPDados">
+            <label for="nome">CEP:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:100px;">
+
+            <label for="nome">Logradouro:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:90px;">
+        </div>
+        <br />
+        <div id="CidadeDados">
+            <label for="nome">Logradouro:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:40px;">
+
+            <label for="nome">cidade:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:100px;">
+
+            <label for="nome">Número:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:60px;">
+
+        </div>
+        <br />
+        <div id="ComplementoDados">
+            <label for="nome">Complemento:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:100px;">
+
+            <label for="nome">Bairro:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:100px;">
+
+        </div>
+        <br />
+        <div id="MostraDados">
+            <label for="caixa">Animais Cadastrados</label>
+            <br />
+            <textarea cols="30" rows="5" name="mensagem" id="mensagem"></textarea>
+            <input id="edita" type="button" value="+">
+        </div>
+        <br />
+    </div>
+
+    <h2 class="Titulo">Dados do Animal</h2>
+    <div class="DadosAnimal">
+        <br />
+        <div id="AnimalDados">
+            <label for="nome">Espécie:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        </div>
+        <br />
+        <div id="RaçaDados">
+            <label for="nome">Raça:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+
+        </div>
+        <br />
+        <div id="PorteDados">
+            <label for="nome">Porte:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        </div>
+        <br />
+        <div id="SexoDados">
+            <label for="nome">Sexo:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        </div>
+        <br />
+        <div id="IdadeAniDados">
+            <label for="nome">Nascimento :</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        </div>
+
+        <br />
+        <div id="NomeAniDados">
+            <label for="nome">Nome do Animal:</label>
+            <input tyepe="text" name="nome" id=" nome" style="width:200px;">
+        </div>
+        <br />
+
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+
+        <input type="button" id="botaoDadosEditar" value="EDITAR">
+        <input type="button" id="botaoDadosVoltar" value="VOLTAR">
+        <input type="submit" id="botaoDadosEnviar" value="ENVIAR CADASTRO">
+    </div>
+    <br /><br /><br /><br />
+
+
+
+
+</form>
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("haha", "haha", "Home", new { })
+</div>

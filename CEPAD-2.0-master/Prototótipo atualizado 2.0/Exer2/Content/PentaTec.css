@@ -1,0 +1,731 @@
+﻿
+
+/*------------------------------------------- começo da Index-------------------------------------------------------------------*/
+#titulo {
+    margin-left: 35%;
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+}
+
+#possuiCadas {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 35%;
+    width: 500px;
+    height: 30px;
+    text-align: center;
+}
+
+#possuiProt {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 35%;
+    width: 500px;
+    height: 30px;
+    text-align: center;
+}
+
+#geralIni {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 35%;
+    width: 500px;
+    height: 410px;
+}
+
+#AnimalIni {
+    margin-left: 63.5px;
+}
+
+#RaçaIni {
+    margin-left: 83px;
+}
+
+#PorteIni {
+    margin-left: 83.2px;
+}
+
+#PorteMedIni {
+    margin-left: 145.2px;
+}
+
+#PorteGradIni {
+    margin-left: 137px;
+}
+
+#SexoIni {
+    margin-left: 84px;
+}
+
+#SexoFemIni {
+    margin-left: 125px;
+}
+
+
+#TipoConsultaIni {
+    margin-left: 1px;
+}
+
+#TipoCasIni {
+    margin-left: 166px;
+}
+
+
+#veracidadeIni {
+    margin-left: 1px;
+}
+
+
+/*------------------------------------------- fim da Index-------------------------------------------------------------------*/
+
+/*------------------------------------------- começo Dados-------------------------------------------------------------------*/
+.DadosPessoais {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 30%;
+    width: 500px;
+    height: 300px;
+}
+
+.DadosEndereço {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 30%;
+    width: 500px;
+    height: 340px;
+}
+
+.DadosAnimal {
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+    margin-left: 30%;
+    width: 500px;
+    height: 300px;
+}
+
+.Titulo {
+    margin-left: 30%;
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+}
+
+#NomeDados {
+    margin-left: 45px;
+}
+
+#EmailDados {
+    margin-left: 46px;
+}
+
+#IdadeDados {
+}
+
+#TelDados {
+    margin-left: 62.3px;
+}
+
+#RGDados {
+    margin-left: 62.1px;
+}
+
+#CPFDados {
+    margin-left: 55.3px;
+}
+
+#CEPDados {
+    margin-left: 1px;
+}
+
+#CidadeDados {
+    margin-left: 1px;
+}
+
+#ComplementoDados {
+    margin-left: 1px;
+}
+
+#MostraDados {
+    margin-left: 1px;
+}
+
+#AnimalDados {
+    margin-left: 59px;
+}
+
+#RaçaDados {
+    margin-left: 77px;
+}
+
+#PorteDados {
+    margin-left: 75.2px;
+}
+
+#SexoDados {
+    margin-left: 76.5px;
+}
+
+#IdadeAniDados {
+    margin-left: 27.5px;
+}
+
+#NomeAniDados {
+}
+
+
+/*------------------------------------------- fim dados-------------------------------------------------------------------*/
+/*------------------------------------------- começo Agendados-------------------------------------------------------------------*/
+.agenda {
+    width: 860px;
+    height: 40px;
+    text-align: center;
+    font-family: Arial;
+    margin-left: 400px;
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+.geral {
+    width: 860px;
+    height: 420px;
+    font-family: Arial;
+    margin-left: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+#prot {
+}
+
+#dia {
+    margin-left: 134.2px;
+}
+
+#hora {
+    margin-left: 112px;
+}
+
+#local {
+    margin-left: 101.8px;
+}
+
+#barueri {
+    text-align: center;
+}
+
+#CEP {
+    text-align: center;
+}
+
+
+/*------------------------------------------- fim Agendados-------------------------------------------------------------------*/
+/*------------------------------------------- Início Resumo-------------------------------------------------------------------*/
+
+#tituloResumo {
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    text-align: center;
+}
+
+#tituloDescriRes {
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    margin-left: 30%;
+}
+
+.Resumo {
+    width: 600px;
+    height: 370px;
+    font-family: Arial;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+.dadosMunícipe {
+    width: 600px;
+    height: 360px;
+    font-family: Arial;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+#nomeRes {
+}
+
+#AnimRes {
+    margin-left: 67px;
+}
+
+#RacaRes {
+    margin-left: 85px;
+}
+
+#PorteRes {
+    margin-left: 84px;
+}
+
+#SexoRes {
+    margin-left: 85px;
+}
+
+#DiaRes {
+    margin-left: 95.8px;
+}
+
+#timeRes {
+    margin-left: 85.8px;
+}
+
+#caixa {
+    margin-left: 30%;
+}
+/*------------------------------------------- Fim Resumo-------------------------------------------------------------------*/
+/*------------------------------------------- Início Protocolo-------------------------------------------------------------------*/
+.tituloProto {
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    margin-left: 30%;
+}
+
+#tituloProtoco {
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    margin-left: 30%;
+}
+
+.ProtolocoVinda1 {
+    width: 600px;
+    height: 400px;
+    font-family: Arial;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+.ProtolocoVinda2 {
+    width: 600px;
+    height: 120px;
+    font-family: Arial;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+.ProtolocoVinda3 {
+    width: 600px;
+    height: 120px;
+    font-family: Arial;
+    margin-left: 30%;
+    border: 1px solid rgba(0, 0, 0, 0.95);
+    border-radius: 5px;
+}
+
+#DiaProt {
+    margin-left: 28px;
+}
+
+#horaProt {
+    margin-left: 1px;
+}
+
+#localProt {
+    margin-left: 14px;
+}
+
+#NProt {
+    margin-left: 4.2px;
+}
+
+#DesProt {
+    margin-left: 79.5px;
+}
+
+#NoResProt {
+    margin-left: 1px;
+}
+
+#ConsProt {
+    margin-left: 86.5px;
+}
+
+#AniProt {
+    margin-left: 100px;
+}
+
+#PortProt {
+    margin-left: 110.3px;
+}
+
+#RacaProt {
+    margin-left: 113px;
+}
+
+#SexoProt {
+    margin-left: 113px;
+}
+
+#DescDesProt {
+    margin-left: 79.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------- Fim Protocolo-------------------------------------------------------------------*/
+/*------------------------------------------- Inicio botão-------------------------------------------------------------------*/
+#botaoDadosEditar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoDadosEditar:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#botaoDadosVoltar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 43px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoDadosVoltar:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#botaoDadosEnviar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 43px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoDadosEnviar:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#botaoIni {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 35%;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoIni:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#confirmaAgend {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #confirmaAgend:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+
+#editaAgend {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 500px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #editaAgend:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#cancelaAgend {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #cancelaAgend:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#voltaAgend {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #voltaAgend:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#botaoResVoltar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoResVoltar:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#botaoResConfirmar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 200px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #botaoResConfirmar:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#OKCadastro {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3px;
+    font-size: 2px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 17px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #OKCadastro:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#OkProtocolo {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3px;
+    font-size: 2px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 17px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #OkProtocolo:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+#btnImp {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+    #btnImp:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+    }
+
+
+
+/*------------------------------------------- fim botão-------------------------------------------------------------------*/

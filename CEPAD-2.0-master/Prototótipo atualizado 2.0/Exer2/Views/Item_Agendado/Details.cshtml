@@ -1,0 +1,35 @@
+﻿@model Exer2.Models.Item_Agendado
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Item_Agendado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agenda.ID_Agenda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agenda.ID_Agenda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.Nome_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Nome_Animal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Protocolo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

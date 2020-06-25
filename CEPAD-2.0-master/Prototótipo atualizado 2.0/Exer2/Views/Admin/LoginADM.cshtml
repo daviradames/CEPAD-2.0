@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "LoginADM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<body id="bodyADM">
+
+    <div id="loginz">
+        <div id="login">
+            <h1>login</h1>
+
+            <form>
+                <p>Usuário</p>
+                <input type="text" name="" placeholder="Insira seu nome de usuário" />
+                <p>Senha</p>
+                <input type="password" name="" placeholder="Insira sua senha" />
+                <input type="button" name="" value="Login" />
+               
+                <div class="link">
+                  Ainda não possui uma conta? @Html.ActionLink("Cadastre-se", "cadastroADM", "Admin")
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

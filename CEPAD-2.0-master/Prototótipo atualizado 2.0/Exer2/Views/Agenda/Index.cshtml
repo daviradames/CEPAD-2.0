@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Exer2.Models.Agenda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Especie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Atendimento.Consulta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Especie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porte.Nome_Porte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_Atendimento.Consulta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Agenda }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Agenda }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Agenda })
+        </td>
+    </tr>
+}
+
+</table>

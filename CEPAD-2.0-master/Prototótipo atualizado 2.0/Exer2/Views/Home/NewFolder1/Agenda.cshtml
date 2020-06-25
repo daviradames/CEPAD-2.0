@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Agenda";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+  var existe = $('#mes, #ano, #container-data').length;
+
+       if(existe){
+
+              carregaDias();
+
+              $('#mes, #ano').change(function(){
+                  carregaDias();
+              });
+        }
+
+  function carregaDias(){
+
+         var existe = $('#formData #mes, #formData #ano, #container-data').length;
+
+          if(!existe){
+              alert('Crie os elementos #formData #mes, #formData #ano, #container-data');
+              return false;
+          }
+
+
+          var mesElement = "#formData #mes";
+          var anoElement = "#formData #ano";
+          var anoAntElement = "#formData #anoAnt";
+          var anoAtualElement = "#formData #anoAtual";
+          var anoProxElement = "#formData #anoProx";
+          var diasElement = "#formData #dias";
+          var selectableElement = "#container-data #selectable";
+          var container = "#container-data";
+
+          var mes = $(mesElement).val();
+          var ano = $(anoElement).val();
+
+          $(container).html('carregando...');
+
+          $.ajax({url:'get_dias.php',
+                  dataType:'json',
+                  type:'post',
+                  data:{mes:mes,ano:ano},
+                  success:function(json){
+
+
+                     $(anoAtualElement).removeAttr("selected");
+
+                     $(anoProxElement).text(json.anoProx).val(json.anoProx);
+                     $(anoAntElement).text(json.anoAnt).val(json.anoAnt);
+                     $(anoAtualElement).text(json.ano).val(json.ano);
+
+                     $(anoElement).val(ano);
+
+                     $(container).html('');
+
+                     var htmlConteiner = '<div id="data-content">
+    \
+    Don Seg Ter Quar Quin Sex Sab \
+    <ol id="selectable">
+        \
+    </ol> \
+</div>';
+
+                     $(container).html(htmlConteiner);
+
+
+                      var html = '<li style="border: 0; background: none; margin: 0; width: '+json.margem+'px;">&nbsp;</li>';
+
+                      $.each(json.dias, function(chave,valor){
+
+
+                          html+= '<li>'+valor.dia+'</li>';
+
+                      });
+
+                      $(selectableElement).html(html);
+
+                      $( selectableElement ).selectable({
+
+                           stop: function() {
+
+                              var datas = '';
+
+                              $( ".ui-selected", this ).each(function(){
+                                      var index= $( "#selectable li" ).index( this );
+
+                                      datas+=index+";";
+                              });
+
+                              $(diasElement).val(datas);
+                          }
+                      });
+
+                  },
+                  error:function(opts, xhr, error, err){
+
+                      alert(opts.responseText);
+                  }
+                });
+
+                return true;
+       }
+
+
+            try {
+
+              $mes = ($_POST['mes']>0 ? $_POST['mes'] : date('m'));
+              $ano = ($_POST['ano']>0 ? $_POST['ano'] : date('Y'));
+
+              $arraySemana = array('Dom','Seg','Ter','Quar','Quin','Sex','Sab');
+
+              for($i=1;$i<=date("d",mktime(0, 0, 0, $mes+1, 0, $ano));$i++){
+
+                      $keySemana = date("w", mktime(0, 0, 0, $mes, $i, $ano));
+
+                      $dias[$i] = array("dia" => $i,
+                                       "semana"=>$keySemana,
+                                       "semanaDesc"=>$arraySemana[$keySemana]
+                                  );
+
+              }
+
+              //agrupa por semana
+              foreach ($dias as $key => $r) {
+                   $semanas[$r['semana']][$r['dia']] = $r;
+              }
+
+              $margem = 23*date("w",mktime(0, 0, 0, $mes, 1, $ano))+(4*date("w",mktime(0, 0, 0, $mes, 1, $ano)));
+
+              $json = array("msg"=>array('cod'=>0,
+                                   'txt'=>'ok'),
+                            'mes'=>$mes,
+                            'anoAnt'=>($ano-1),
+                            'anoProx'=>($ano+1),
+                            'ano'=>$ano,
+                            'dias'=>$dias,
+                            'margem'=>$margem);
+
+
+          } catch (Exception $e) {
+
+              $json = array("msg"=>array('cod'=>1,
+                                   'txt'=>$e->getMessage()),
+                            'mes'=>date('m'),
+                            'ano'=>date('Y'),
+                            'anoAnt'=>1,
+                            'anoProx'=>1,
+                            'dias'=>array());
+          }
+
+          echo json_encode($json);
+
+<legend>Datas (Segure CRT ou arraste o mouse para selecionar várias datas)</legend>
+<div>
+
+    <input type="hidden" name="dias" id="dias" />
+
+    <label>Mes</label>
+    <select name="mes" id="mes">
+        <?php for ($m = 1; $m <= 12; $m++) { ?>
+        <option <?php echo ($m == date('m') ? 'selected' : '');?> value="<?php echo $m;?>"><?php echo $m;?></option>
+        <?php }?>
+    </select>
+
+    <label>Ano</label>
+    <select name="ano" id="ano">
+        <option id="anoAnt" value="<?php echo (date('Y')-1);?>"><?php echo (date('Y')-1);?></option>
+        <option id="anoAtual" selected="selected" value="<?php echo date('Y');?>"><?php echo date('Y');?></option>
+        <option id="anoProx" value="<?php echo (date('Y')+1);?>"><?php echo (date('Y')+1);?></option>
+    </select>
+
+</div>
+
+<div id="container-data"></div>
+
+
+

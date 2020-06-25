@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "verdade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+<script>
+         function validarSenha() {
+             NovaSenha = document.getElementById('NovaSenha').value;
+             CNovaSenha = document.getElementById('CNovaSenha').value;
+             if (NovaSenha != CNovaSenha) {
+                 alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS");
+                 return false;
+             } else {
+                 alert("cadastro completo com êxido");
+             }
+         }
+
+        function Onlychars(e) {
+            var tecla = new Number();
+            if (window.event) {
+                tecla = e.keyCode;
+            }
+            else if (e.which) {
+                tecla = e.which;
+            }
+            else {
+                return true;
+            }
+            if ((tecla >= "48") && (tecla <= "57")) {
+                return false;
+            }
+        }
+</script>
+</head>
+<body>
+
+
+    <div id="cadastro">
+       
+
+        <br />
+        <form method="get" onSubmit="return validar()" id="FormSenha">
+            <div id="comprime">
+                <h1 id="cads">Dados Pessoais</h1>
+                <form>
+                    <p>
+                        <label>Nome:   </label>               <br>  <input type="text" id="CRMV" required />
+                    </p>
+
+
+                    <p>
+                        <label> Email: </label>                 <br> <input type="email" id="CRMV" required />
+                    </p>
+
+                    <br />
+
+
+                    <p>
+                        <label>Data de Nascimento:    <br></label> <input type="date" placeholder="mm/dd/aaaa" id="data_nascimento" required>
+                    </p>
+
+                    <br />
+
+                    <p>
+
+                        <label>RG:</label>                   <br> <input type="text" id="CRMV2" required />
+                    </p>
+
+
+
+                    <p>
+                        <label> CPF:   </label>                <br><input type="email" id="CRMV2" required />
+                    </p>
+
+                    <br />
+
+                    <p id="tel">
+                        <label>Telefone:  </label>                <br> <input type="number" id="tell" required placeholder="(XX)" onkeypress="return event.charCode >= 48 && event.charCode <=57" maxlength="2" /> - <input type="number" id="tell2" required placeholder="XXXX-XXXX" onkeypress="return event.charCode >= 48 && event.charCode <=57" maxlength="8" /></label>
+                    </p>
+
+                    <br />
+
+                    <p id="sex">
+                        <label>
+                            Sexo:
+                            Masculino       <input type="radio" name="sexo" checked="checked">
+                    </p> </label>
+
+                    <p id="feminino">  <label>      Feminino        <input type="radio" name="sexo"></p>
+
+                    <br />
+            </div>
+            
+            <div id="comprimeJoga">
+                <h1 id="cads">Endereço</h1>
+                <p>
+                    <label>UF:</label>    <br>               <input type="text" id="CRMV3" required />
+                </p>
+                <br />
+
+                <p>
+                    <label>CEP: </label>    <br>               <input type="text" id="CRMV4" required />
+                </p>
+                <br />
+
+                <p>
+                    <label>Cidade:  </label>    <br>              <input type="text" id="CRMV" required />
+                </p>
+
+                <br />
+
+                <p>
+                    <label>Bairro:  </label>    <br>              <input type="text" id="CRMV" required />
+                </p>
+                <br />
+
+                <p>
+                    <label>Rua: </label>       <br>            <input type="text" id="CRMV" required />
+                </p>
+                <br />
+
+                <p>
+                    <label>Complemento: </label>    <br>               <input type="text" id="CRMV" required />
+                </p>
+                <br />
+               
+                <label>
+                    Espécie do Animal:
+                </label>
+                        <select id=cbPais>
+                        <option>Selecione alguma espécie</option>
+                        <option>Canino</option>
+                        <option>Felino</option>
+                        <option>Equino</option>
+                        </select> 
+
+               
+</form>
+    </div>
+    
+    <br />
+    <div style="padding-top:600px">
+    <fieldset>
+        <div id="formulario">
+            <input type="reset" id="but_voltar" value="limpar os dados" /><br />
+            <button type="button" id="but_prox" onClick="validarSenha()" >Enviar</button>
+        </div>
+    </fieldset>
+  
+
+    </div>
+</body>
+</html>
+
+<div style="background-color:#ff0000;height:40px;width:100px;">
+    @Html.ActionLink("verifica", "verifica", "Home", new { })
+</div>

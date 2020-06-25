@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Exer2.Models.Item_Agendado>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Agenda.ID_Agenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal.Nome_Animal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agenda.ID_Agenda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal.Nome_Animal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Protocolo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Protocolo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Protocolo })
+        </td>
+    </tr>
+}
+
+</table>

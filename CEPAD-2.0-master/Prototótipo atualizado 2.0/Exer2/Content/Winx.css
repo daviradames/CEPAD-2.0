@@ -1,0 +1,285 @@
+﻿#area {
+    margin-right: 10px;
+    margin-top: 10px;
+    /*mexe a posição do formulário, da view Index*/
+}
+
+
+#formulario #vagas {
+    width: 217px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../images/arrow.jpg) no-repeat right #fff;
+    border: 1px solid #ccc;
+    /*formatação do text box "quantidades de vagas"*/
+}
+
+
+
+#formulario #tipo_atendimento {
+    margin-left: 0px;
+    width: 217px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../images/arrow.jpg) no-repeat right #fff;
+    border: 1px solid #ccc;
+    /*formatação do section "Tipo de atendimento"*/
+}
+
+
+
+#formulario #femea {
+    margin-left: 87px;
+    /*mexe a posição do check box*/
+}
+
+#formulario #felino {
+    margin-left: 93px;
+    /*mexe a posição do check box*/
+}
+
+#formulario #canino {
+    margin-left: 27px;
+    /*mexe a posição do check box*/
+}
+
+
+
+#formulario #sexo {
+    margin-left: 45px;
+    /*mexe a posição do check box*/
+}
+
+
+
+#formulario #porte_pequeno {
+    margin-left: 27px;
+    /*mexe a posição do check box*/
+}
+
+#formulario #porte_medio {
+    margin-left: 90px;
+    /*mexe a posição do check box*/
+}
+
+#formulario #porte_grande {
+    margin-left: 81px;
+    /*mexe a posição do check box*/
+}
+
+
+
+#formulario #temp_inicial {
+    margin-left: 50.5px;
+    /*mexe a posição do NOME tempo inicial */
+}
+
+#formulario #temp_final {
+    margin-left: 57.5px;
+    /*mexe a posição do NOME tempo final */
+}
+
+#formulario #tempo_ag {
+    margin-left: 0px;
+    width: 85px;
+    height: 34px;
+    overflow: hidden;
+    background: url(../images/arrow.jpg) no-repeat right #fff;
+    border: 1px solid #ccc;
+    /*formatação do text box do "tempo inicial/final*/
+}
+
+
+#formulario #data_nome {
+    margin-left: 109.5px;
+    /*mexe a posição do NOME "data"*/
+}
+
+
+
+
+#formulario #but_voltar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 175px;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #83295C;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    /*formata o botão*/
+}
+
+#formulario #but_prox {
+    display: inline-block;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #036;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #000;
+    padding: 5px;
+    padding: 5px;
+    background-color: #83295C;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    /*formata o botão*/
+}
+
+    #formulario #but_prox:hover {
+        color: #83295C;
+        background: #f7f7f7;
+        border: 1px solid #83295C;
+        /*formata o botão ao passar o mause em cima*/
+    }
+
+#formulario #but_voltar:hover {
+    color: #83295C;
+    background: #f7f7f7;
+    border: 1px solid #83295C;
+    /*formata o botão ao passar o mause em cima*/
+}
+
+
+
+#cadastro {
+    margin-left: 90px;
+    /* mexe tudo pro lado direito*/
+}
+
+
+    #cadastro #cads {
+        margin-left: 120px;
+        /* mexe o nome "cadastro"(h1)*/
+    }
+
+
+    #cadastro #campo_uf_crmv {
+        margin-left: 24px;
+        /*mexe o NOME uf do crmv */
+    }
+
+
+    #cadastro #CRMV {
+        width: 217px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*formatação dos text box*/
+    }
+
+
+    #cadastro #campo_crmv {
+        margin-left: 68px;
+        /*mexe o Nome "CRMV"*/
+    }
+
+
+
+    #cadastro #nome_campo {
+        margin-left: 70px;
+        /*mexe o Nome "Nome"*/
+    }
+
+    #cadastro #email_campo {
+        margin-left: 71.4px;
+        /*mexe o Nome "Email"*/
+    }
+
+    #cadastro #sex {
+        width: 217px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        /*formatação do checkbox*/
+    }
+
+
+    #cadastro #feminino {
+        margin-left: 48px;
+        /*formatação do checkbox*/
+    }
+
+
+    #cadastro #data_nascimento {
+        margin-left: 0px;
+        width: 100px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*formata o tex box da data*/
+    }
+
+
+    #cadastro #tel {
+        margin-left: 54px;
+        /*mexe o nome telefone*/
+    }
+
+
+    #cadastro #tell {
+        width: 40px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*o telefone é divido por duas text box, uma pequena, e outra grande. essa é a formatação da caixa pequena*/
+    }
+
+    #cadastro #tell2 {
+        width: 164px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*o telefone é divido por duas text box, uma pequena, e outra grande. essa é a formatação da caixa Grande*/
+    }
+
+
+    #cadastro #campo_senha {
+        margin-left: 69.5px;
+        /*mexe o Nome "campo senha"*/
+    }
+
+
+    #cadastro #senha {
+        width: 217px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*formatação da senha*/
+    }
+
+
+
+    #cadastro #campo_confirm_senha {
+        margin-right: 5px;
+        /*mexe o Nome "confirmar senha"*/
+    }
+
+
+    #cadastro #confirm_senha {
+        width: 217px;
+        height: 34px;
+        overflow: hidden;
+        background: url(../images/arrow.jpg) no-repeat right #fff;
+        border: 1px solid #ccc;
+        /*formatação do confirmar senha*/
+    }
+
