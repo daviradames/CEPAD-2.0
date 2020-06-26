@@ -1,0 +1,94 @@
+﻿@model Exer2.Models.Disp_Atend
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div id="pequeno4">
+        <div class="form-horizontal">
+            <p id="formTi">Disponibilidade de Atendimento</p>
+            <p id="tituloResumo1"> Crie uma vaga para o atendimento</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.DT_Inicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.DT_Inicio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DT_Inicio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DT_Fim, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.DT_Fim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DT_Fim, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NT_Atend_Ofer, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.NT_Atend_Ofer, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NT_Atend_Ofer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Num_Atend_Agendado, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.Num_Atend_Agendado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Num_Atend_Agendado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_TA, "ID_TA", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.DropDownList("ID_TA", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_TA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_Porte, "ID_Porte", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.DropDownList("ID_Porte", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_Porte, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_Tipo, "ID_Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-6">
+                    @Html.DropDownList("ID_Tipo", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_Tipo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-default" />
+
+
+            @Html.ActionLink("Back to List", "Index")
+
+        </div>
+
+    </div>
+
+
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

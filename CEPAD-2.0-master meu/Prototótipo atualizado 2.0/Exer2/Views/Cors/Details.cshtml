@@ -1,0 +1,27 @@
+﻿@model Exer2.Models.Cor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_Cor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_Cor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Cor }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
