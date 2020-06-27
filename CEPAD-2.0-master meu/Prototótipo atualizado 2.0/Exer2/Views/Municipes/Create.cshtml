@@ -175,7 +175,8 @@
     </div>
 
     <div id="formulario">
-        <button class="btn btn-info" id="but_voltar">  @Html.ActionLink("Voltar", "Index", "Municipes") </button>
+        <button class="btn btn-info" id="but_voltar">  @Html.ActionLink("Voltar", "Index", "Municipes",
+                                                       new { @class = "linkClass" }) </button>
         <input type="reset" class="btn btn-info" id="but_prox" value="Limpar">
         <button class="btn btn-info" id="but_voltar" type="submit"> Concluir </button>
 

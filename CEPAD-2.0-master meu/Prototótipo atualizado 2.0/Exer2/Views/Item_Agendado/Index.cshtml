@@ -9,41 +9,42 @@
 
 
 <div id="pequeno4">
+    <p id="formTi" class="text-center">Item Agendado</p>
     <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Nova Item Agenda", "Create")</button>
-        </li>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Nova Item Agenda", "Create")</button>
+            </li>
         </ol>
-        </nav>
+    </nav>
 
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Agenda.ID_Agenda)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Animal.Nome_Animal)
-                    </th>
-                    <th></th>
-                </tr>
+    <table id="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Agenda.ID_Agenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal.Nome_Animal)
+            </th>
+            <th></th>
+        </tr>
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Agenda.ID_Agenda)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Animal.Nome_Animal)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Protocolo }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ID_Protocolo }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Protocolo })
-                        </td>
-                    </tr>
-                }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agenda.ID_Agenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal.Nome_Animal)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Protocolo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Protocolo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Protocolo })
+                </td>
+            </tr>
+        }
 
-            </table>
+    </table>
 </div>

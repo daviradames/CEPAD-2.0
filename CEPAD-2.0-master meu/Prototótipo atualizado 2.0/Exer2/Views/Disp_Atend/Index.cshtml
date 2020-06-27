@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div id="pequeno3">
+    <p id="formTi" class="text-center">Disponibilidade de Atendimento</p>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -14,7 +15,7 @@
             </li>
         </ol>
     </nav>
-    <table class="table">
+    <table id="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NT_Atend_Ofer)
@@ -31,7 +32,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tipo.Nome_Tipo_Animal)
             </th>
-           
+
         </tr>
 
         @foreach (var item in Model)
@@ -53,10 +54,11 @@
                     @Html.DisplayFor(modelItem => item.Tipo.Nome_Tipo_Animal)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new {  id=item.DT_Inicio  }) </td>
-                <td>    @Html.ActionLink("Details", "Details", new {  id=item.DT_Inicio }) </td>
-            <td>
-                    @Html.ActionLink("Delete", "Delete", new {  id=item.DT_Inicio  })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DT_Inicio })
+                </td>
+                <td>    @Html.ActionLink("Details", "Details", new { id = item.DT_Inicio }) </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DT_Inicio })
                 </td>
             </tr>
         }

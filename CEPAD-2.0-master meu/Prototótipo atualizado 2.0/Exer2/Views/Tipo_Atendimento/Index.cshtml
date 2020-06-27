@@ -7,42 +7,44 @@
 
 
 <div id="pequeno4">
-
+    <p id="formTi" class="text-center">Tipo de Atendimento</p>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <button class="btn btn-primary rounded-pill btn-block shadow-sm">
-                    @Html.ActionLink("Novo tipo de Atendimento", "Create")</button> </li>
-            </ol>
-        </nav>
-                    
-                    <table class="table">
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Consulta)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Castração)
-                            </th>
-                            <th></th>
-                        </tr>
+                    @Html.ActionLink("Novo tipo de Atendimento", "Create")
+                </button>
+            </li>
+        </ol>
+    </nav>
 
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Consulta)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Castração)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_TA }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ID_TA }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_TA })
-                                </td>
-                            </tr>
-                        }
+    <table id="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Consulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Castração)
+            </th>
+            <th></th>
+        </tr>
 
-                    </table>
-    </div>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Consulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Castração)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_TA }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_TA }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_TA })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -6,52 +6,56 @@
 }
 
 
+<div id="pequeno3">
+    <p id="formTi" class="text-center"> Agenda </p>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Novo Agenda", "Create")</button></li>
+            <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Disponibilidade de Atendimento", "Index", "Disp_Atend")</button></li>
+            <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Item Agendado", "Index", "Item_Agendado")</button></li>
+            <li class="breadcrumb-item active" aria-current="page"><button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Tipo de Atendimento", "Index", "Tip_Atendimento")</button></li>
+        </ol>
+    </nav>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Novo Agenda", "Create")</button></li>
-        <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Disponibilidade de Atendimento", "Index", "Disp_Atend")</button></li>
-        <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Item Agendado", "Index", "Item_Agendado")</button></li>
-        <li class="breadcrumb-item active" aria-current="page"><button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Tipo de Atendimento", "Index", "Tip_Atendimento")</button></li>
-    </ol>
-</nav>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_Especie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_Usuario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.porte.Nome_Porte)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_Atendimento.Consulta)
-        </th>
-        <th></th>
-    </tr>
+    <table id="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo_Atendimento.Consulta)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_Especie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.porte.Nome_Porte)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo_Atendimento.Consulta)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Agenda }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_Agenda }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Agenda })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Especie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.porte.Nome_Porte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo_Atendimento.Consulta)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Agenda }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Agenda }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Agenda })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

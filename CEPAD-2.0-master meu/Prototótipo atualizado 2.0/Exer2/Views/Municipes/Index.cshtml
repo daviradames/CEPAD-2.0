@@ -6,10 +6,10 @@
 }
 
 <div id="pequeno4">
-
+    <p id="formTi" class="text-center">Dados do Munícipe</p>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Novo Animal", "Create")</button></li>
+            <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Cadastrar", "Create")</button></li>
             <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Animal", "Index", "Animals")</button></li>
             <li class="breadcrumb-item active" aria-current="page"><button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Pesquisa", "Pesquisa", "Clientes")</button></li>
         </ol>
@@ -46,7 +46,7 @@
                 </th>
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.CPF)
-                </th>              
+                </th>
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Cidade)
                 </th>
@@ -56,7 +56,7 @@
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Usuario.USuario1)
                 </th>
-                
+
             </tr>
 
             @foreach (var item in Model)
@@ -102,12 +102,13 @@
                         @Html.DisplayFor(modelItem => item.Usuario.USuario1)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_Municipe }) </td>
-                    <td>    @Html.ActionLink("Details", "Details", new { id = item.ID_Municipe })</td> 
-                        <td>@Html.ActionLink("Delete", "Delete", new { id = item.ID_Municipe })</td>
-                    
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_Municipe })
+                    </td>
+                    <td>    @Html.ActionLink("Details", "Details", new { id = item.ID_Municipe })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.ID_Municipe })</td>
+
                 </tr>
             }
         </table>
     </div>
-    </div>
+</div>

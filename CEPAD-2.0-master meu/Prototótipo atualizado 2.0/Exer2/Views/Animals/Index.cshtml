@@ -6,98 +6,102 @@
 }
 
 <div id="pequeno3">
+    <p id="formTi" class="text-center">Dados do Animal</p>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm" > @Html.ActionLink("Novo Animal", "Create" )</button></li>
+            <li class="breadcrumb-item">  <button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Novo Animal", "Create")</button></li>
             <li class="breadcrumb-item"> <button class="btn btn-primary rounded-pill btn-block shadow-sm">@Html.ActionLink("Munícipe", "Index", "Municipes")</button></li>
             <li class="breadcrumb-item active" aria-current="page"><button class="btn btn-primary rounded-pill btn-block shadow-sm"> @Html.ActionLink("Pesquisa", "Pesquisa", "Clientes")</button></li>
         </ol>
     </nav>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DT_Nasc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome_Animal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Castrado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pelagem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.COD_RGA)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sexo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Especie.Nome_Especie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Municipe.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.porte.Nome_Porte)
-            </th>
+    <table id="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DT_Nasc)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Nome_Animal)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Castrado)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Pelagem)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.COD_RGA)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sexo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Especie.Nome_Especie)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Municipe.Nome)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+                </th>
 
-        </tr>
+            </tr>
 
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DT_Nasc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome_Animal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Castrado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pelagem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.COD_RGA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Especie.Nome_Especie)
-            </td>
-
-
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Municipe.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.Nome_Tipo_Animal)
-            </td>
-            <td>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DT_Nasc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome_Animal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Castrado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pelagem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COD_RGA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sexo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especie.Nome_Especie)
+                    </td>
 
 
-                @Html.ActionLink("Editar", "Edit",
-                    new { controller = "Animals", id = item.ID_Animal },
-                    new { @class = "linkClass"})
-                </td>
-            <td>
-                @Html.ActionLink("Detalhes", "Details",
-                    new { controller = "Animals", id = item.ID_Animal, },
-                    new { @class = "linkClass" })
-            </td>
-            <td>
-                @Html.ActionLink("Deletar", "Delete",
-                    new { controller = "Animals", id = item.ID_Animal },
-                    new { @class = "linkClass" })
-           </td>
 
-        </tr>
-        }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Municipe.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo.Nome_Tipo_Animal)
+                    </td>
+                    <td>
 
+
+                        @Html.ActionLink("Editar", "Edit",
+                            new { controller = "Animals", id = item.ID_Animal })|
+                            
+                        <br />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalhes", "Details",
+                            new { controller = "Animals", id = item.ID_Animal, })|
+                           
+                        <br />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Deletar", "Delete",
+                            new { controller = "Animals", id = item.ID_Animal })
+                           
+                    </td>
+
+                </tr>
+            }
+            </thead>
     </table>
 </div>

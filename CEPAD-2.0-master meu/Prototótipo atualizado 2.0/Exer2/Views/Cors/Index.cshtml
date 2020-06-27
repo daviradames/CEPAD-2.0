@@ -8,37 +8,38 @@
 
 
 <div id="pequeno4">
-
+    <p id="formTi" class="text-center">Cores</p>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <button class="btn btn-primary rounded-pill btn-block shadow-sm">
-                    @Html.ActionLink("Adicionar outra cor", "Create")</button>
-                <li/>
-            </ol>
-        </nav>
+                    @Html.ActionLink("Adicionar outra cor", "Create")
+                </button>
+            <li />
+        </ol>
+    </nav>
 
-                    <table class="table">
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Nome_Cor)
-                            </th>
-                            <th></th>
-                        </tr>
+    <table id="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Cor)
+            </th>
+            <th></th>
+        </tr>
 
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Nome_Cor)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Cor }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ID_Cor }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Cor })
-                                </td>
-                            </tr>
-                        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome_Cor)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Cor }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Cor }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Cor })
+                </td>
+            </tr>
+        }
 
-                    </table>
-    </div>
+    </table>
+</div>
