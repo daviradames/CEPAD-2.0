@@ -1,0 +1,51 @@
+﻿@model Exer2.Models.Agenda
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Agenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Especie.Nome_Especie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especie.Nome_Especie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.porte.Nome_Porte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Atendimento.Consulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Atendimento.Consulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.USuario1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.USuario1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Agenda }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

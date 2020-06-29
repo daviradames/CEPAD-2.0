@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Exer2.Models.Disp_Atend>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <button id="btnn"> @Html.ActionLink("Criar uma Agenda", "Create")</button>
+</p>
+<table id="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NT_Atend_Ofer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Atend_Agendado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porte.Nome_Porte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porte1.Nome_Porte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Atendimento.Consulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Atendimento1.Consulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo.Nome_Tipo_Animal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo1.Nome_Tipo_Animal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NT_Atend_Ofer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Atend_Agendado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porte.Nome_Porte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porte1.Nome_Porte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_Atendimento.Consulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_Atendimento1.Consulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo.Nome_Tipo_Animal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo1.Nome_Tipo_Animal)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Deletar", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
